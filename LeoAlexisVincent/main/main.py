@@ -19,16 +19,17 @@ except:
     # importlib.reload("Gameur")
 if __name__ == "__main__":
     try :
-        file = open("game")
+        file = open("game") #TODO Replace with os.path
         file.read()
         file.close()
         print("Partie rejointe, merci de patienter...")
-        token = str(hex(randint(255,1024)))
+        token = str(hex(randint(255,2048)))
         player = Gamer.Gamer()
-        while player.get_life >= 0:
-            if Utils.FileExists("open") == False:
+        while player.get_life() >= 0:
+            if Utils.FileExists("game") == False:
                 print("Vous avez gagné ! ")
                 exit(0)
+            
             Utils.GameFileWrite(token)
             pass
         os.remove('game')
@@ -36,4 +37,4 @@ if __name__ == "__main__":
         print("Création de la partie, en attente de joueurs...")
         # token = hex(randint(255,1024)) #TODO Login system
         # print("Demandez à vos amis d'entrer ce token pour arriver dans la partie" + str(token))
-        open("game", 'w+')
+        open("game", 'w+') #TODO Add time before script ends.
