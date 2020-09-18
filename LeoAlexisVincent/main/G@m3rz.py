@@ -11,7 +11,8 @@ class Gamer:
         self.name, self.race = Gen.GeneratorInit()
         self.items = Gen.
         self.pv = vie
-        self.des = 
+        self.des = Des(1,3)
+        
         # self.comp1 = comp[random.randint(0, 3)]
     # def get_comp(self):
     #     return self.comp1

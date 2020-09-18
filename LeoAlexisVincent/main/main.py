@@ -2,6 +2,11 @@
 import os
 from random import randint
 #Gamer = importlib.import_module("Gameur")
+Utils = importlib.import_module("Utils")
+"""
+Some of the code is used from Gameur.py made by Léo Gautier and Vincent Maccaeli
+under their strict authorization.
+"""
 try:
     pass
     #t = Gamer.Gamer(-1) # Mock Gamer verifing if modules are well initiated
@@ -18,10 +23,13 @@ if __name__ == "__main__":
         file.read()
         file.close()
         print("Partie rejointe, merci de patienter...")
-        token = hex(randint(255,1024))
+        token = str(hex(randint(255,1024)))
         player = Gamer.Gamer()
         while player.get_life >= 0:
-            
+            if Utils.FileExists("open") == False:
+                print("Vous avez gagné ! ")
+                exit(0)
+            Utils.GameFileWrite(token)
             pass
         os.remove('game')
     except FileNotFoundError:
