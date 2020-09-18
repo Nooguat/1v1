@@ -1,0 +1,6 @@
+Installation de bs4
+Windows :
+py -m pip install bs4
+
+Linux :
+pip3 install bs4
