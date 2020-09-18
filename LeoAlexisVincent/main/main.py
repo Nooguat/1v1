@@ -1,7 +1,9 @@
 ﻿import importlib
+import os
+from random import randint
 #Gamer = importlib.import_module("Gameur")
 try:
-    t = Gamer.Gamer(-1) # Mock Gamer verifing if modules are well charged
+    t = Gamer.Gamer(-1) # Mock Gamer verifing if modules are well initiated
 except:
     print("des modules nécéssaires ne sont pas installés. Installation en cours...")
     os.system("py -m pip install bs4 --user")
@@ -10,10 +12,13 @@ except:
     print("modules installés")
     # importlib.reload("Gameur")
 if __name__ == "__main__":
-    if i:= input("Joueur 1 ou Joueur 2 ?") == "Joueur 1":
-        #Gamer.Gamer(1)
-    else if i:= input("Joueur 1 ou Joueur 2 ?") == "Joueur 2":
-        #Gamer.Gamer(2)
+    if file:=open("game"):
+        file.read()
+        print("Partie rejointe, merci de patienter...")
     else:
-        print("Input non pris en charge. Fin de l'execution...")
-        exit(0)
+        print("Création de la partie, en attente de joueurs...")
+        token = hex(radint(255,1024))
+        print(token)
+        i = input("Souhaitez vous rendre cette partie privée ? (pas d'input si non)")
+        if i == '':
+            open("game", 'w+')

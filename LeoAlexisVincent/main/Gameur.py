@@ -10,7 +10,7 @@ Gen = importlib.import_module("generateurs")
 
 class Personnage:
     def __init__(self, vie):
-        comp = ["feu", "glace", "air", "terre"]
+        comp = ["feu", "glace", "air", "terre"] # Not yet implemented
         self.name = Generator()
         self.pv = vie
         self.comp1 = comp[random.randint(0, 3)]

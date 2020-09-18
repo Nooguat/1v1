@@ -45,3 +45,15 @@ class GeneratorInit(Generator):
         names = str(mydivs).split("\n")[3].split('<br/>')
         for i in range(int(nbr_name)):
             print(names[i])
+class GeneratorItems(Generator):
+    def __init__(self):
+        pass
+    
+    def request(self, nbr):
+        r = requests.post(
+            self.url, data=self.data)
+        soup = BeautifulSoup(r.text, features="html.parser")
+        mydivs = soup.findAll("div", {"class": "articles"})
+        names = str(mydivs).split("\n")[3].split('<br/>')
+        for i in range(int(nbr_name)):
+            print(names[i])
